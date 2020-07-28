@@ -1,0 +1,65 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\James\\source\\repos\\maze generation and solving csharp\\maze generation and solving csharp\\maze generation and solving csharp.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\James\\source\\repos\\maze generation and solving csharp\\maze generation and solving csharp\\maze generation and solving csharp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\James\\source\\repos\\maze generation and solving csharp\\maze generation and solving csharp\\maze generation and solving csharp.csproj",
+        "projectName": "maze generation and solving csharp",
+        "projectPath": "C:\\Users\\James\\source\\repos\\maze generation and solving csharp\\maze generation and solving csharp\\maze generation and solving csharp.csproj",
+        "packagesPath": "C:\\Users\\James\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\James\\source\\repos\\maze generation and solving csharp\\maze generation and solving csharp\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\James\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300-preview-015048\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+C:\Users\James\source\repos\maze generation and solving csharp\maze generation and solving csharp\bin\Debug\netcoreapp3.1\maze generation and solving csharp.exe
+C:\Users\James\source\repos\maze generation and solving csharp\maze generation and solving csharp\bin\Debug\netcoreapp3.1\maze generation and solving csharp.deps.json
+C:\Users\James\source\repos\maze generation and solving csharp\maze generation and solving csharp\bin\Debug\netcoreapp3.1\maze generation and solving csharp.runtimeconfig.json
+C:\Users\James\source\repos\maze generation and solving csharp\maze generation and solving csharp\bin\Debug\netcoreapp3.1\maze generation and solving csharp.runtimeconfig.dev.json
+C:\Users\James\source\repos\maze generation and solving csharp\maze generation and solving csharp\bin\Debug\netcoreapp3.1\maze generation and solving csharp.dll
+C:\Users\James\source\repos\maze generation and solving csharp\maze generation and solving csharp\bin\Debug\netcoreapp3.1\maze generation and solving csharp.pdb
+C:\Users\James\source\repos\maze generation and solving csharp\maze generation and solving csharp\obj\Debug\netcoreapp3.1\maze generation and solving csharp.csprojAssemblyReference.cache
+C:\Users\James\source\repos\maze generation and solving csharp\maze generation and solving csharp\obj\Debug\netcoreapp3.1\maze generation and solving csharp.AssemblyInfoInputs.cache
+C:\Users\James\source\repos\maze generation and solving csharp\maze generation and solving csharp\obj\Debug\netcoreapp3.1\maze generation and solving csharp.AssemblyInfo.cs
+C:\Users\James\source\repos\maze generation and solving csharp\maze generation and solving csharp\obj\Debug\netcoreapp3.1\maze generation and solving csharp.csproj.CoreCompileInputs.cache
+C:\Users\James\source\repos\maze generation and solving csharp\maze generation and solving csharp\obj\Debug\netcoreapp3.1\maze generation and solving csharp.dll
+C:\Users\James\source\repos\maze generation and solving csharp\maze generation and solving csharp\obj\Debug\netcoreapp3.1\maze generation and solving csharp.pdb
+C:\Users\James\source\repos\maze generation and solving csharp\maze generation and solving csharp\obj\Debug\netcoreapp3.1\maze generation and solving csharp.genruntimeconfig.cache
