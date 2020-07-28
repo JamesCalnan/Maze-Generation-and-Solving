@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Dynamic;
 using System.Linq;
-using System.Text;
 
-namespace colour_function_csharp
+namespace maze_generation_and_solving_csharp
 {
     class Prims_Algorithm
     {

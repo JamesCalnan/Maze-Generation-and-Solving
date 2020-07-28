@@ -2,12 +2,9 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
-using System.Linq;
-using System.Net.NetworkInformation;
-using System.Reflection;
 using System.Threading;
 
-namespace colour_function_csharp
+namespace maze_generation_and_solving_csharp
 {
 
     class Program
