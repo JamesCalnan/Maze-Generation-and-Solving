@@ -8,7 +8,7 @@ namespace maze_generation_and_solving_csharp
 {
     class Recursive_Solving_Method
     {
-        public static void SolveMaze(List<Point> maze)
+        public static void solveMaze(List<Point> maze)
         {
 
             var discovered = new Dictionary<Point, bool>();

@@ -7,7 +7,7 @@ namespace maze_generation_and_solving_csharp
 {
     class Breadth_first_Search
     {
-        public static void BreadthfirstSearch(List<Point> maze)
+        public static void solveMaze(HashSet<Point> maze)
         {
             var Q = new Queue<Point>();
             var discovered = maze.ToDictionary(vertex => vertex, vertex => false);

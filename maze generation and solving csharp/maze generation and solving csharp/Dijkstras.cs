@@ -7,7 +7,7 @@ namespace maze_generation_and_solving_csharp
 {
     class Dijkstras
     {
-        public static void DijkstrasAlgorithm(List<Point> maze)
+        public static void solveMaze(HashSet<Point> maze)
         {
 
             var Q = new HashSet<Point>();

@@ -7,7 +7,7 @@ namespace maze_generation_and_solving_csharp
 {
     class Depth_first_Search
     {
-        public static void DepthfirstSearch(List<Point> maze)
+        public static void solveMaze(HashSet<Point> maze)
         {
             var S = new Stack<Point>();
             var discovered = maze.ToDictionary(vertex => vertex, vertex => false);

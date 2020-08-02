@@ -20,7 +20,7 @@ namespace maze_generation_and_solving_csharp
             return openSet.First();
         }
 
-        public static void AStarAlgorithm(List<Point> maze)
+        public static void solveMaze(HashSet<Point> maze)
         {
             var heuristic = 10;
 
@@ -49,8 +49,6 @@ namespace maze_generation_and_solving_csharp
             while (openSet.Count > 0)
             {
                 var current = ExtractMinPointAStar(openSet,fScore);
-
-                Program.printPoint(current);
 
                 if (current.Equals(goal))
                 {

@@ -5,15 +5,15 @@ using System.Linq;
 
 namespace maze_generation_and_solving_csharp
 {
-    class Prims_Algorithm
+    class PrimsAlgorithm
     {
 
-        public static List<Point> primsAlgorithm(int width, int height)
+        public static HashSet<Point> generateMaze(int width, int height)
         {
 
             var V = new HashSet<Point>();
-            var discovered = Recursive_Backtracker.ReturnDict(width, height);
-            var maze = new List<Point>();
+            var discovered = RecursiveBacktrackerAlgorithm.ReturnDict(width, height);
+            var maze = new HashSet<Point>();
 
             var weights = returnWeights(discovered.Keys.ToList());
 
@@ -24,13 +24,8 @@ namespace maze_generation_and_solving_csharp
 
             var r = new Random();
 
-            Program.setBothColours(ConsoleColor.White);
-
             var mazeEntry = new Point(5, 2);
             maze.Add(mazeEntry);
-            Program.printPoint(mazeEntry);
-
-            Program.printPoint(currentV);
             maze.Add(currentV);
 
             while (true)
@@ -50,10 +45,7 @@ namespace maze_generation_and_solving_csharp
 
                 var newVertex = visitedNeighbours[r.Next(visitedNeighbours.Count)];
 
-                var wallV = Recursive_Backtracker.pointMidPoint(newVertex, lowestWeightVertex);
-
-                Program.printPoint(wallV);
-                Program.printPoint(lowestWeightVertex);
+                var wallV = RecursiveBacktrackerAlgorithm.pointMidPoint(newVertex, lowestWeightVertex);
 
                 maze.Add(wallV);
                 maze.Add(lowestWeightVertex);
@@ -66,12 +58,9 @@ namespace maze_generation_and_solving_csharp
 
             }
 
-            var mazeExit = Recursive_Backtracker.returnExit(width, height);
+            var mazeExit = RecursiveBacktrackerAlgorithm.returnExit(width, height);
 
             maze.Add(mazeExit);
-
-            Program.printPoint(mazeExit);
-
 
             return maze;
         }
@@ -124,7 +113,7 @@ namespace maze_generation_and_solving_csharp
         }
 
 
-        private static Dictionary<Point, int> returnWeights(List<Point> availableVertices)
+        public static Dictionary<Point, int> returnWeights(List<Point> availableVertices)
         {
             return availableVertices.ToDictionary(v => v, v => new Random().Next());
         }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
+using System.Linq;
 using System.Threading;
 
 namespace maze_generation_and_solving_csharp
@@ -9,26 +10,53 @@ namespace maze_generation_and_solving_csharp
 
     class Program
     {
-        public static int delay = 10;
+        public static int delay = 0;
         static void Main(string[] args)
         {
 
             Console.ReadKey();
             Console.CursorVisible = false;
 
-            var maze = Prims_Algorithm.primsAlgorithm(Console.WindowWidth / 2, Console.WindowHeight - 5);
+            while (true)
+            {
 
-            var stopwatch = new Stopwatch();
+                (int, int) mazeDimenations = (Console.WindowWidth- 8, Console.WindowHeight - 5);
 
-            stopwatch.Start();
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write("generating maze...");
 
-            AStar.AStarAlgorithm(maze);
+                var mazes = new HashSet<HashSet<Point>>
+                {
+                    BoruvkasAlgorithm.generateMaze(mazeDimenations.Item1, mazeDimenations.Item2),
+                    PrimsAlgorithm.generateMaze(mazeDimenations.Item1, mazeDimenations.Item2),
+                    KruskalsAlgorithm.generateMaze(mazeDimenations.Item1, mazeDimenations.Item2),
+                    RecursiveBacktrackerAlgorithm.generateMaze(mazeDimenations.Item1, mazeDimenations.Item2)
 
-            Console.SetCursorPosition(50, 0);
-            Console.ResetColor();
-            Console.Write($"time taken to solve: {stopwatch.Elapsed.TotalSeconds}");
+                };
+
+                Console.Clear();
+
+                foreach (HashSet<Point> maze in mazes)
+                {
+                    printMaze(maze);
+                    Depth_first_Search.solveMaze(maze);
+                    Thread.Sleep(400);
+                    Console.ResetColor();
+                    Console.Clear();
+                }
+            }
 
             Console.ReadKey();
+        }
+
+        public static void printMaze(HashSet<Point> mazeHashSet)
+        {
+            setBothColours(ConsoleColor.White);
+            foreach (Point v in mazeHashSet)
+            {
+                printPoint(v);
+                Thread.Sleep(delay);
+            }
         }
 
         public static void findPath(Point goal, Point root, Dictionary<Point, Point> cameFrom)
@@ -53,7 +81,7 @@ namespace maze_generation_and_solving_csharp
            }
         }
 
-        public static List<Point> returnAdjacentVertices(List<Point> maze, Point v)
+        public static List<Point> returnAdjacentVertices(HashSet<Point> maze, Point v)
         {
             var adjacentPoints = new List<Point>();
             var editPoint = new Point(v.X + 2,v.Y);
