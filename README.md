@@ -4,6 +4,8 @@ Maze generation and solving in c# in the console window
 > Maze generation algorithms:
 - Recursive backtracker (randomised depth-first search)
 - Prim's algorithm (random weights)
+- Kruskal's algorithm (random weights)
+- Borůvka's algorithm (random weights)
 
 > Solving algorithms
 - A*
