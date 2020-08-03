@@ -13,3 +13,5 @@ Maze generation and solving in c# in the console window
 - Depth-first Search
 - Dijkstra's Algorithm
 - Recursive solving method
+
+<img src="maze generation and solving csharp/image.png">
