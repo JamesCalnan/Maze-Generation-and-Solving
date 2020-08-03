@@ -25,25 +25,68 @@ namespace maze_generation_and_solving_csharp
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.Write("generating maze...");
 
-                var mazes = new HashSet<HashSet<Point>>
-                {
-                    BoruvkasAlgorithm.generateMaze(mazeDimenations.Item1, mazeDimenations.Item2),
-                    PrimsAlgorithm.generateMaze(mazeDimenations.Item1, mazeDimenations.Item2),
-                    KruskalsAlgorithm.generateMaze(mazeDimenations.Item1, mazeDimenations.Item2),
-                    RecursiveBacktrackerAlgorithm.generateMaze(mazeDimenations.Item1, mazeDimenations.Item2)
+                var mazes = new HashSet<HashSet<Point>>();
+                //{
+                //    BoruvkasAlgorithm.generateMaze(mazeDimenations.Item1, mazeDimenations.Item2),
+                //    PrimsAlgorithm.generateMaze(mazeDimenations.Item1, mazeDimenations.Item2),
+                //    KruskalsAlgorithm.generateMaze(mazeDimenations.Item1, mazeDimenations.Item2),
+                //    RecursiveBacktrackerAlgorithm.generateMaze(mazeDimenations.Item1, mazeDimenations.Item2)
 
-                };
+                //};
+
+                var thread = new Thread(
+                    () =>
+                    {
+                        mazes.Add(BoruvkasAlgorithm.generateMaze(mazeDimenations.Item1, mazeDimenations.Item2));
+                    });
+                var thread2 = new Thread(
+                    () =>
+                    {
+                        mazes.Add(PrimsAlgorithm.generateMaze(mazeDimenations.Item1, mazeDimenations.Item2));
+                    });
+                var thread3 = new Thread(
+                    () =>
+                    {
+                        mazes.Add(KruskalsAlgorithm.generateMaze(mazeDimenations.Item1, mazeDimenations.Item2));
+                    });
+                var thread4 = new Thread(
+                    () =>
+                    {
+                        mazes.Add(RecursiveBacktrackerAlgorithm.generateMaze(mazeDimenations.Item1, mazeDimenations.Item2));
+                    });
+                thread.Start();
+                thread2.Start();
+                thread3.Start();
+                thread4.Start();
+
 
                 Console.Clear();
+
+                if (thread.IsAlive | thread2.IsAlive | thread3.IsAlive | thread4.IsAlive)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Write("generating mazes...");
+                }
+
+                while (thread.IsAlive | thread2.IsAlive | thread3.IsAlive | thread4.IsAlive)
+                {
+
+                }
+
+                Console.SetCursorPosition(0, 0);
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write("finished generating mazes");
 
                 foreach (HashSet<Point> maze in mazes)
                 {
                     printMaze(maze);
                     Depth_first_Search.solveMaze(maze);
-                    Thread.Sleep(400);
+                    Thread.Sleep(800);
                     Console.ResetColor();
                     Console.Clear();
                 }
+
+                
             }
 
             Console.ReadKey();

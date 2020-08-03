@@ -8,27 +8,20 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\James\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\James\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\James\\source\\repos\\Maze-generation-and-solving\\maze generation and solving csharp\\maze generation and solving csharp\\maze generation and solving csharp.csproj",
+      "projectUniqueName": "C:\\Users\\James\\Documents\\GitHub\\Maze-generation-and-solving\\maze generation and solving csharp\\maze generation and solving csharp\\maze generation and solving csharp.csproj",
       "projectName": "maze generation and solving csharp",
-      "projectPath": "C:\\Users\\James\\source\\repos\\Maze-generation-and-solving\\maze generation and solving csharp\\maze generation and solving csharp\\maze generation and solving csharp.csproj",
+      "projectPath": "C:\\Users\\James\\Documents\\GitHub\\Maze-generation-and-solving\\maze generation and solving csharp\\maze generation and solving csharp\\maze generation and solving csharp.csproj",
       "packagesPath": "C:\\Users\\James\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\James\\source\\repos\\Maze-generation-and-solving\\maze generation and solving csharp\\maze generation and solving csharp\\obj\\",
+      "outputPath": "C:\\Users\\James\\Documents\\GitHub\\Maze-generation-and-solving\\maze generation and solving csharp\\maze generation and solving csharp\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
         "C:\\Users\\James\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -65,7 +58,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300-preview-015048\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
       }
     }
   }
