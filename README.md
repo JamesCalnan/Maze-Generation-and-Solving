@@ -1,5 +1,5 @@
 # Maze-generation-and-solving
-Maze generation and solving in c# in the console window
+Maze generation and solving in c# in the console window using LinQ and the Drawing Point class
 
 > Maze generation algorithms:
 - Recursive backtracker (randomised depth-first search)
