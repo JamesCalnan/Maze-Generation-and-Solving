@@ -18,8 +18,6 @@ namespace maze_generation_and_solving_csharp
 
             var maze = new HashSet<Point>();
 
-            var usedVertices = new HashSet<Point>();
-
             var weights = returnEdgeWeights(width, height, availableVertices);
             var V = assignInitialSetNumbers(availableVertices);
 

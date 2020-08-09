@@ -40,6 +40,6 @@ namespace maze_generation_and_solving_csharp
             }
         }
 
-        private static bool isNotEmpty(Queue<Point> q) => q.Count > 0;
+        public static bool isNotEmpty(Queue<Point> q) => q.Count > 0;
     }
 }

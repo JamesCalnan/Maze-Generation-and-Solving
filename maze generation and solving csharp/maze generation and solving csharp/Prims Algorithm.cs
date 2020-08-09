@@ -41,7 +41,7 @@ namespace maze_generation_and_solving_csharp
 
                 var lowestWeightVertex = ExtractMinV(V, weights);
 
-                var visitedNeighbours = returnVistsedNeighbours(discovered, lowestWeightVertex);
+                var visitedNeighbours = returnVisitedNeighbours(discovered, lowestWeightVertex);
 
                 var newVertex = visitedNeighbours[r.Next(visitedNeighbours.Count)];
 
@@ -64,7 +64,7 @@ namespace maze_generation_and_solving_csharp
 
             return maze;
         }
-        public static List<Point> returnVistsedNeighbours(Dictionary<Point, bool> discovered, Point cV)
+        public static List<Point> returnVisitedNeighbours(Dictionary<Point, bool> discovered, Point cV)
         {
             var returnList = new List<Point>();
 
