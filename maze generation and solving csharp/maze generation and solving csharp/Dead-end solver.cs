@@ -13,28 +13,6 @@ namespace maze_generation_and_solving_csharp
     class DeadendSolver
     {
 
-        static Point adjacentvisitedVertex(HashSet<Point> maze, Point v, HashSet<Point> visited)
-        {
-            var surr =  new List<Point>
-            {
-                new Point(v.X + 2, v.Y),
-                new Point(v.X - 2, v.Y),
-                new Point(v.X, v.Y + 1),
-                new Point(v.X, v.Y - 1),
-            };
-
-            foreach (Point vertex in surr)
-            {
-
-                if (visited.Contains(vertex))
-                {
-                    return vertex;
-                }
-
-            }
-            return Point.Empty;
-        }
-
         static bool isJunction(HashSet<Point> maze, Point v)
         {
             return new List<Point>

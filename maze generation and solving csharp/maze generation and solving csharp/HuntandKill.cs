@@ -55,7 +55,6 @@ namespace maze_generation_and_solving_csharp
                         var visitedNeighbours = PrimsAlgorithm.returnVisitedNeighbours(visited, v);
                         if (visitedNeighbours.Count == 0 || visited[v])
                         {
-                            //if there are no visited neighbours OR the current vertex is also visited
                             continue;
                         }
                         else
@@ -88,31 +87,5 @@ namespace maze_generation_and_solving_csharp
 
         static bool unvisitedVertices(Dictionary<Point, bool> visited) => visited.Values.ToList().Contains(false);
 
-        //public static List<Point> returnVistsedNeighbours(Dictionary<Point, bool> discovered, Point cV)
-        //{
-        //    var returnList = new List<Point>();
-
-        //    if (discovered.ContainsKey(new Point(cV.X + 4, cV.Y)) && discovered[new Point(cV.X + 4, cV.Y)])
-        //    {
-        //        returnList.Add(new Point(cV.X + 4, cV.Y));
-        //    }
-
-        //    if (discovered.ContainsKey(new Point(cV.X - 4, cV.Y)) && discovered[new Point(cV.X - 4, cV.Y)])
-        //    {
-        //        returnList.Add(new Point(cV.X - 4, cV.Y));
-        //    }
-
-        //    if (discovered.ContainsKey(new Point(cV.X, cV.Y + 2)) && discovered[new Point(cV.X, cV.Y + 2)])
-        //    {
-        //        returnList.Add(new Point(cV.X, cV.Y + 2));
-        //    }
-
-        //    if (discovered.ContainsKey(new Point(cV.X, cV.Y - 2)) && discovered[new Point(cV.X, cV.Y - 2)])
-        //    {
-        //        returnList.Add(new Point(cV.X, cV.Y - 2));
-        //    }
-
-        //    return returnList;
-        //}
     }
 }
