@@ -7,6 +7,7 @@ Maze generation and solving in c# in the console window using LinQ and the Drawi
 - Kruskal's algorithm (random weights)
 - Borůvka's algorithm (random weights)
 - Hunt and Kill algorithm
+- Wilson's algorithm
 
 > Solving algorithms
 - A*
