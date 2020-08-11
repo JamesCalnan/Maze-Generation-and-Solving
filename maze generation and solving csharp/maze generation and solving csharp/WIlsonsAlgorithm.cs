@@ -11,21 +11,11 @@ namespace maze_generation_and_solving_csharp
 
         public static HashSet<Point> generateMaze(int width, int height)
         {
-            var startV = new Point(5, 3);
-
-            var maze = new HashSet<Point>
-            {
-                new Point(5, 2),
-            };
-
             var r = new Random();
 
             var visited = RecursiveBacktrackerAlgorithm.ReturnDict(width, height);
 
-            var cameFrom = new Dictionary<Point, Point>();
-
-            cameFrom = resetCameFrom(visited);
-
+            var cameFrom = resetCameFrom(visited);
 
             //Choose any vertex at random and add it to the UST.
             //Select any vertex that is not already in the UST and perform a random walk until you encounter a vertex that is in the UST.
@@ -38,9 +28,11 @@ namespace maze_generation_and_solving_csharp
             var prev = currentV;
             visited[currentV] = true;
 
-            Program.setBothColours(ConsoleColor.White);
-
-            Program.printPoint(currentV);
+            var maze = new HashSet<Point>
+            {
+                new Point(5, 2),
+                currentV
+            };
 
             UST.Add(currentV);
 
@@ -50,12 +42,6 @@ namespace maze_generation_and_solving_csharp
             var firstCell = currentV;
 
 
-            Program.setBothColours(ConsoleColor.Blue);
-
-            Program.printPoint(currentV);
-
-            Console.ReadKey();
-
             while (unvisitedVertices(visited))
             {
 
@@ -63,78 +49,58 @@ namespace maze_generation_and_solving_csharp
 
                 var temporaryVertex = surroundingVertices[r.Next(surroundingVertices.Count)];
 
-                Program.setBothColours(ConsoleColor.Blue);
-
-                Program.printPoint(currentV);
+                cameFrom[prev] = temporaryVertex;
 
 
                 if (UST.Contains(temporaryVertex))
                 {
-
-
-                    cameFrom[currentV] = temporaryVertex;
-
-                    //trace the currentnode to the end of the camefrom dict
-
-                    var verticesToBeAdded = new List<Point>();
-
                     temporaryVertex = firstCell;
 
-                    Program.setBothColours(ConsoleColor.Cyan);
-
-                    Program.printPoint(temporaryVertex);
-
-                    var prevV = temporaryVertex;
-
-                    while (!UST.Contains(temporaryVertex))
+                    var verticesToBeAdded = new List<Point>
                     {
+                        temporaryVertex
+                    };
 
+
+                    do
+                    {
                         if (!cameFrom.ContainsKey(temporaryVertex))
                         {
                             break;
                         }
-                        
+
                         temporaryVertex = cameFrom[temporaryVertex];
-
-                       // Program.printPoint(RecursiveBacktrackerAlgorithm.pointMidPoint(prevV, temporaryVertex));
-
-                        prevV = temporaryVertex;
-
-                       // Program.printPoint(temporaryVertex);
-
                         verticesToBeAdded.Add(temporaryVertex);
+                    } while (!UST.Contains(temporaryVertex));
 
-                       // Console.ReadKey();
 
-                    }
-
-                    Program.setBothColours(ConsoleColor.Cyan);
-
-                    prevV = verticesToBeAdded.First();
-
-                    if (verticesToBeAdded.Count == 1)
+                    for (int i = 0; i < verticesToBeAdded.Count - 1; i++)
                     {
+                        var v1 = verticesToBeAdded[i];
+                        var v2 = verticesToBeAdded[i + 1];
+                        var wall = RecursiveBacktrackerAlgorithm.pointMidPoint(v1, v2);
 
-                        Program.printPoint(RecursiveBacktrackerAlgorithm.pointMidPoint(verticesToBeAdded.First(), verticesToBeAdded.Last()));
+                        visited[v1] = true;
 
-                    }
+                        maze.Add(wall);
+                        maze.Add(v1);
 
-                    foreach (Point v in verticesToBeAdded)
-                    {
-                        visited[v] = true;
-                        UST.Add(v);
-                        Program.printPoint(v);
-                        Program.printPoint(RecursiveBacktrackerAlgorithm.pointMidPoint(prevV, v));
-                        prevV = v;
+                        UST.Add(v1);
                     }
 
                     cameFrom = resetCameFrom(visited);
 
+                    if (!unvisitedVertices(visited))
+                    {
+                        break;
+                    }
+
                     currentV = getUnvisitedVertex(visited);
+
+                    prev = currentV;
 
                     firstCell = currentV;
 
-                    Console.ReadKey();
                 }
                 else
                 {
@@ -150,36 +116,23 @@ namespace maze_generation_and_solving_csharp
 
             }
 
+            var mazeExit = RecursiveBacktrackerAlgorithm.returnExit(width, height);
 
+            maze.Add(mazeExit);
 
             return maze;
         }
 
         static Dictionary<Point, Point> resetCameFrom(Dictionary<Point, bool> visited)
         {
-            var returncameFrom = new Dictionary<Point, Point>();
-
-            foreach (Point v in visited.Keys)
-            {
-                returncameFrom.Add(v, Point.Empty);
-            }
-
-            return returncameFrom;
+            return visited.Keys.ToDictionary(v => v, v => Point.Empty);
         }
 
         static Point getUnvisitedVertex(Dictionary<Point, bool> visited)
         {
-
-            var possibleVertices = new List<Point>();
             var r = new Random();
 
-            foreach (var v in visited)
-            {
-                if (!v.Value)
-                {
-                    possibleVertices.Add(v.Key);
-                }
-            }
+            var possibleVertices = (from v in visited where !v.Value select v.Key).ToList();
 
             return possibleVertices[r.Next(possibleVertices.Count)];
         }
