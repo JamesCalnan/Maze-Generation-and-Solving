@@ -8,13 +8,16 @@ Maze generation and solving in c# in the console window using LinQ and the Drawi
 - Borůvka's algorithm (random weights)
 - Hunt and Kill algorithm
 - Wilson's algorithm
+- Aldous-Broder algorithm
+- Hamiltonian graph generation
 
 > Solving algorithms
-- A*
+- A* search
 - Breadth-first Search
 - Depth-first Search
-- Dijkstra's Algorithm
+- Dijkstra's algorithm
 - Recursive solving method
 - Dead-end filling method
+- Shortest Path Faster algorithm
 
 <img src="maze generation and solving csharp/image.png">
