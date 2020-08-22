@@ -10,7 +10,7 @@ namespace maze_generation_and_solving_csharp
 
     class Program
     {
-        public static int delay = 0;
+        public static int delay = 20;
 
         static void testsingle()
         {
@@ -20,7 +20,7 @@ namespace maze_generation_and_solving_csharp
             Console.Write("generating maze...");
 
 
-            var maze = WIlsonsAlgorithm.generateMaze(mazeDimenations.Item1, mazeDimenations.Item2);
+            var maze = Hamiltonian_Graph.generateMaze(mazeDimenations.Item1, mazeDimenations.Item2);
 
 
             setBothColours(ConsoleColor.White);
@@ -131,7 +131,6 @@ namespace maze_generation_and_solving_csharp
 
             }
 
-            Console.ReadKey();
         }
 
         public static void printMaze(HashSet<Point> mazeHashSet, bool useDelay = true)

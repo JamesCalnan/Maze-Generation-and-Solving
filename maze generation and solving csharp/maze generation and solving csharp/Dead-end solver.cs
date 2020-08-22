@@ -24,7 +24,7 @@ namespace maze_generation_and_solving_csharp
             }.Count(vertex => maze.Contains(vertex)) >= 3;
         }
 
-        static bool isDeadend(HashSet<Point> maze, Point v)
+        public static bool isDeadend(HashSet<Point> maze, Point v)
         {
             return new List<Point>
             {
