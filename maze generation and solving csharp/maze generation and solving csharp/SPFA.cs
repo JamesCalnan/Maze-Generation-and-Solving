@@ -65,7 +65,7 @@ namespace maze_generation_and_solving_csharp
 
         public SQFAQueue()
         {
-            this.items = new Queue<T>();
+            items = new Queue<T>();
         }
 
 

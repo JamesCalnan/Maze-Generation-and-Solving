@@ -28,8 +28,10 @@ namespace maze_generation_and_solving_csharp
         /// </summary>
         /// <param name="width"></param>
         /// <param name="height"></param>
-        /// <returns></returns>
-        //todo add scoring to the random vertex walk in order to improve efficiency
+        /// <returns>
+        /// Returns a hashset which contains points that are the maze
+        /// </returns>
+        //todo add scoring to the random vertex walk in order to improve efficiency, need to fix start/endpoint thing
         public static HashSet<Point> generateMaze(int width, int height)
         {
             var startV = new Point(5, 3);
@@ -48,7 +50,7 @@ namespace maze_generation_and_solving_csharp
             Program.setBothColours(ConsoleColor.White);
             Program.printPoint(currentV);
 
-            while (unvisitedVertices(visited))
+            while (true)
             {
 
                 var availableVertices = Program.returnUnvisitedNeighbours(visited, currentV);
@@ -155,19 +157,51 @@ namespace maze_generation_and_solving_csharp
 
                 }
 
+                if (currentV.Equals(endV))
+                {
+                    if (!unvisitedVertices(visited))
+                    {
+                        break;
+                    }
+                }
+
             }
 
             var startAndEnd = returnStartAndGoal(maze);
 
+            maze = removeDuplicate(maze);
+
+            maze.Reverse();
+            maze.Add(startAndEnd.Item1);
+            maze.Reverse();
+            maze.Add(startAndEnd.Item2);
+
             Program.setBothColours(ConsoleColor.Green);
-            Program.printPoint(startAndEnd.Item1);
+            Program.printPoint(maze.First());
             Program.setBothColours(ConsoleColor.Red);
-            Program.printPoint(startAndEnd.Item2);
+            Program.printPoint(maze.Last());
 
             Console.ReadKey();
 
             return maze;
 
+        }
+
+        private static HashSet<Point> removeDuplicate(HashSet<Point> inputSet)
+        {
+            var returnSet = new HashSet<Point>();
+
+            foreach (var v in inputSet)
+            {
+
+                if (!returnSet.Contains(v))
+                {
+                    returnSet.Add(v);
+                }
+
+            }
+
+            return returnSet;
         }
 
         private static (Point, Point) returnStartAndGoal(HashSet<Point> maze)

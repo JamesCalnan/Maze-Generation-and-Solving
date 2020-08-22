@@ -10,7 +10,7 @@ namespace maze_generation_and_solving_csharp
 
     class Program
     {
-        public static int delay = 20;
+        public static int delay = 5;
 
         static void testsingle()
         {
